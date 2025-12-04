@@ -72,6 +72,7 @@ function Login() {
             </div>
             <button 
               type="button" 
+              aria-label="Reset your password"
               className="text-sm text-blue-600 hover:text-blue-500 bg-transparent border-none cursor-pointer"
             >
               Forgot password?
@@ -90,6 +91,7 @@ function Login() {
           Don't have an account?{' '}
           <button 
             type="button" 
+            aria-label="Create a new account"
             className="text-blue-600 hover:text-blue-500 font-medium bg-transparent border-none cursor-pointer"
           >
             Sign up
