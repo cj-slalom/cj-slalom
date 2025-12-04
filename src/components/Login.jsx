@@ -3,11 +3,12 @@ import { useState } from 'react';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [rememberMe, setRememberMe] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle login logic here
-    console.log('Login attempted with:', { email, password });
+    console.log('Login attempted with:', { email, password, rememberMe });
   };
 
   return (
@@ -59,15 +60,20 @@ function Login() {
               <input
                 id="remember"
                 type="checkbox"
+                checked={rememberMe}
+                onChange={(e) => setRememberMe(e.target.checked)}
                 className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
               />
               <label htmlFor="remember" className="ml-2 block text-sm text-gray-700">
                 Remember me
               </label>
             </div>
-            <a href="#" className="text-sm text-blue-600 hover:text-blue-500">
+            <button 
+              type="button" 
+              className="text-sm text-blue-600 hover:text-blue-500 bg-transparent border-none cursor-pointer"
+            >
               Forgot password?
-            </a>
+            </button>
           </div>
           
           <button
@@ -80,9 +86,12 @@ function Login() {
         
         <p className="mt-6 text-center text-sm text-gray-600">
           Don't have an account?{' '}
-          <a href="#" className="text-blue-600 hover:text-blue-500 font-medium">
+          <button 
+            type="button" 
+            className="text-blue-600 hover:text-blue-500 font-medium bg-transparent border-none cursor-pointer"
+          >
             Sign up
-          </a>
+          </button>
         </p>
       </div>
     </div>
